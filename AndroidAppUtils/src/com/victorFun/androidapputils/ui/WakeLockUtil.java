@@ -12,7 +12,7 @@ import android.view.WindowManager;
 /**
  * WakeLockUtil is a util for wifi lock and power lock(screen lock).<br>
  * wifi lock: wifiLock() and wifiUnlock()<br>
- * power lock has two ways powerLock() and powerUnlock().<br>
+ * power lock has two ways powerLock() and powerUnlock(). When we use this function, do not forget to add permission: android.permission.WAKE_LOCK<br>
  * we can also use setKeepScreenOn(Activity activity, boolean flag)
  * 
  * @author VFang
