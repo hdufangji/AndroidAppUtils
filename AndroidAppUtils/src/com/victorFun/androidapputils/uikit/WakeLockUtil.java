@@ -1,4 +1,4 @@
-package com.victorFun.androidapputils.ui;
+package com.victorFun.androidapputils.uikit;
 
 import android.app.Activity;
 import android.content.Context;

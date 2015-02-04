@@ -3,7 +3,7 @@ package com.victorFun.androidapputils.test;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.victorFun.androidapputils.ui.WakeLockUtil;
+import com.victorFun.androidapputils.uikit.WakeLockUtil;
 
 public class WakeLockTest extends Activity{
 	
