@@ -17,6 +17,10 @@
         
         <activity 
             android:name="com.victorFun.androidapputils.fundation_technoligy.android.pair.PairDemonActivity" >
+        </activity>
+        
+        <activity 
+            android:name="com.victorFun.androidapputils.test.FileTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />"
                 <category android:name="android.intent.category.LAUNCHER" />"

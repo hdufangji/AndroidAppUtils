@@ -1,4 +1,7 @@
-package com.victorFun.androidapputils;
+package com.victorFun.androidapputils.media.video;
+
+
+import com.victorFun.androidapputils.media.MediaSQLiteUtil;
 
 import android.content.Context;
 import android.net.Uri;

@@ -1,4 +1,4 @@
-package com.victorFun.androidapputils;
+package com.victorFun.androidapputils.file;
 
 import java.io.File;
 import java.io.FileInputStream;

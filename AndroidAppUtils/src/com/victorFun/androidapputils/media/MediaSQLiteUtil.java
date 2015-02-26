@@ -1,4 +1,4 @@
-package com.victorFun.androidapputils;
+package com.victorFun.androidapputils.media;
 
 import java.io.File;
 import java.util.ArrayList;
