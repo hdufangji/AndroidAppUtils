@@ -16,7 +16,7 @@ import android.util.Log;
 public class RecursiveFileObserver extends FileObserver {
 	static final String LOG_TAG = RecursiveFileObserver.class.getSimpleName();
 
-    public static int CHANGES_ONLY = CLOSE_WRITE | MOVE_SELF | MOVED_FROM;
+    public static int CHANGES_ONLY = CLOSE_WRITE | MOVE_SELF | MOVED_FROM | MODIFY | CREATE | DELETE;
     
     List<SingleFileObserver> mObservers;
     String mPath;
@@ -29,7 +29,7 @@ public class RecursiveFileObserver extends FileObserver {
 	}
 
 	public RecursiveFileObserver(String path) {
-        this(path, ALL_EVENTS);
+        this(path, CHANGES_ONLY);
     }
     
     public RecursiveFileObserver(String path, int mask) {

@@ -1,5 +1,7 @@
 <resources>
 
     <string name="app_name">AndroidAppUtils</string>
+    <string name="speak">hit me and speak!</string>
+    <string name="speak_prompt">voice recognition demon.</string>
 
 </resources>

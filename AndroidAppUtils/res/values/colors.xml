@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="title_text">#FFFFFF</color>
+  <color name="status_text">#FFFFFF</color>
+  <color name="status_text_small">#AAAAAA</color>
+  <color name="status_text_small_shadow">#FF000000</color>
+  <color name="content_text">#000000</color>
+  <color name="listview_item_default">#70FFFFFF</color>
+  <color name="listview_item_pressed">#FF0A6207</color>
+  <color name="listview_item_focused">#FFAAAAAA</color>
+  <color name="listview_item_selected">#FFAAAAAA</color>
+  <color name="dialog_background">@android:color/white</color>
+  <color name="connect_toggle_on_off">#4A4A4A</color>
+  <color name="connect_toggle_on">#00BE00</color>
+  <color name="connect_toggle_off">#E50000</color>
+</resources>
