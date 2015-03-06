@@ -21,16 +21,18 @@
         
         <activity 
             android:name="com.victorFun.androidapputils.media.audio.VoiceRecognition" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.victorFun.androidapputils.test.FileTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-        <activity 
-            android:name="com.victorFun.androidapputils.test.FileTestActivity" >
-            
-        </activity>
+        <service android:enabled="true" android:exported="false" android:name="com.victorFun.androidapputils.file.service.FileModificationService" />
     </application>
 
 </manifest>
