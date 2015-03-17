@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.victorFun.androidapputils"
+    package="com.victor_fun.android_app_utils"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -16,23 +16,23 @@
         android:theme="@style/Theme" >
         
         <activity 
-            android:name="com.victorFun.androidapputils.fundation_technoligy.android.pair.PairDemonActivity" >
+            android:name=".fundation_technoligy.android.pair.PairDemonActivity" >
         </activity>
         
         <activity 
-            android:name="com.victorFun.androidapputils.media.audio.VoiceRecognition" >
+            android:name=".media.audio.VoiceRecognition" >
             
         </activity>
         
         <activity 
-            android:name="com.victorFun.androidapputils.test.FileTestActivity" >
+            android:name=".test.FileTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-        <service android:enabled="true" android:exported="false" android:name="com.victorFun.androidapputils.file.service.FileModificationService" />
+        <service android:enabled="true" android:name=".file.service.FileModificationService" />
     </application>
 
 </manifest>
