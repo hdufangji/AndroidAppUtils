@@ -22,4 +22,6 @@
 	<dimen name="main_icon_width">110dp</dimen>
 	<dimen name="connect_toggle_width">222dp</dimen>
 	<dimen name="connect_toggle_height">67dp</dimen>
+	
+	<dimen name="dialog_text_size">18dp</dimen>
 </resources>

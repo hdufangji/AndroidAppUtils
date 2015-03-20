@@ -12,14 +12,18 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Pair;
 
+import com.victor_fun.android_app_utils.DateUtil;
 import com.victor_fun.android_app_utils.media.FileInfo;
 import com.victor_fun.android_app_utils.media.MediaDetailInfo;
 import com.victor_fun.android_app_utils.media.MediaServer;
 import com.victor_fun.android_app_utils.media.MediaType;
 
 public class PhotoServer extends MediaServer {
+	static final String LOG_TAG = PhotoServer.class.getSimpleName();
+	
 	public static final String[] ItemImageDetailProjection = new String[] {
 		MediaStore.Images.ImageColumns.DISPLAY_NAME,
 		MediaStore.Images.ImageColumns.DATA,
@@ -29,7 +33,9 @@ public class PhotoServer extends MediaServer {
 		MediaStore.Images.ImageColumns.WIDTH,
 		MediaStore.Images.ImageColumns.HEIGHT,
 		MediaStore.Images.ImageColumns.LATITUDE,
-		MediaStore.Images.ImageColumns.LONGITUDE
+		MediaStore.Images.ImageColumns.LONGITUDE,
+		MediaStore.Images.ImageColumns.DATE_TAKEN,
+		MediaStore.Images.ImageColumns.DATE_ADDED
 	};
 
 	public String getDeviceAllPhotoInfo(Context ctx) throws JSONException{
@@ -153,6 +159,9 @@ public class PhotoServer extends MediaServer {
 				long lo = cursor.getLong(8);
 				tempInfo.setLatitude(la);
 				tempInfo.setLongitude(lo);
+				
+				Log.d(LOG_TAG, "DATE_TAKEN" + cursor.getLong(9) + DateUtil.parseLong2Date(cursor.getLong(9)));
+				Log.d(LOG_TAG, "DATE_ADDED" + cursor.getLong(10) + DateUtil.parseLong2Date(cursor.getLong(10) * 1000));
 				// TODO
 //				String locationName = MediaSQLiteUtil.getMediaLocationInfo(ctx, la, lo);
 //				tempInfo.setLocation(locationName);

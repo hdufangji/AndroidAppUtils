@@ -4,4 +4,12 @@
     <string name="speak">hit me and speak!</string>
     <string name="speak_prompt">voice recognition demon.</string>
 
+    
+    
+    
+    <string name="hsm_connect_dlg_text_1">HTC Sync Manager is requesting permission to connect. Do you want to accept? This will automatically enable USB debugging while communicating with HTC Sync Manager.</string>
+    <string name="hsm_connect_dlg_text_2">You can manually change this option in Settings &gt; More &gt; Mobile network sharing &gt; HTC Sync Manager</string>
+    <string name="hsm_connect_dlg_chkbox_dont_ask">Don\'t ask me again</string>
+    
+    <string name="hsm_connect_dlg_title">Connect to HTC Sync Manager?</string>
 </resources>
