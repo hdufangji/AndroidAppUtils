@@ -5,11 +5,25 @@
     <string name="speak_prompt">voice recognition demon.</string>
 
     
-    
+    <string name="connect_pref_full_wakelock">Keep the device awake</string>
+  	<string name="connect_pref_full_wakelock_hint">Keep the device awake during Wi-Fi syncing for a better data transfer performance.</string>
+  	<string name="connect_pref_category_performance">Performance</string>
+  	
+  	<string name="pref_reset_connection_title">RESET THE CONNECTION</string>
+  	<string name="pref_reset_connection_small_title">Reset</string>
+  	<string name="pref_reset_connection_summary">Remove the saved connection so that AirBurn can establish new connection to Nero Burning ROM.</string>
+  	
+  	<string name="pref_general">GENERAL</string>
+  	<string name="pref_about">About</string>
     
     <string name="hsm_connect_dlg_text_1">HTC Sync Manager is requesting permission to connect. Do you want to accept? This will automatically enable USB debugging while communicating with HTC Sync Manager.</string>
     <string name="hsm_connect_dlg_text_2">You can manually change this option in Settings &gt; More &gt; Mobile network sharing &gt; HTC Sync Manager</string>
     <string name="hsm_connect_dlg_chkbox_dont_ask">Don\'t ask me again</string>
     
     <string name="hsm_connect_dlg_title">Connect to HTC Sync Manager?</string>
+    
+    <string name="about_1">Nero MediaHome Wi-Fi Sync %s</string>
+    <string name="about_2">2003-2015 Nero AG and its licensors.</string>
+    <string name="about_3">All rights reserved www.nero.com</string>
+    <string name="about_4">End User License Agreement</string>
 </resources>

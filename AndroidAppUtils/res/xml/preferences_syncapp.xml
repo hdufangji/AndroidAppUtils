@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<PreferenceCategory
+		android:title="@string/connect_pref_category_performance">
+		
+		<CheckBoxPreference
+			android:key="@string/libneroconnect_pref_full_wakelock_key"
+			android:defaultValue="true"
+			android:title="@string/connect_pref_full_wakelock"
+			android:summary="@string/connect_pref_full_wakelock_hint" />
+			
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+		android:title="@string/pref_reset_connection_title" >
+		<Preference
+		    android:key="@string/libneroconnect_pref_reset_connection_ip_key"
+			android:title="@string/pref_reset_connection_small_title"
+			android:summary="@string/pref_reset_connection_summary" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+		android:title="@string/pref_general"	>
+		<PreferenceScreen android:title="@string/pref_about" >
+		    <com.victor_fun.android_app_utils.preferences.AboutPreference />
+		</PreferenceScreen>
+	</PreferenceCategory>
+	
+</PreferenceScreen>

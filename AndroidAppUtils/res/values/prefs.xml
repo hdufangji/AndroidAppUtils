@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="libneroconnect_pref_full_wakelock_key">libneroconnect_pred_full_wakelock_key</string>
+    <string name="libneroconnect_pref_reset_connection_ip_key">libneroconnect_pred_reset_connection_ip_key</string>
+</resources>
