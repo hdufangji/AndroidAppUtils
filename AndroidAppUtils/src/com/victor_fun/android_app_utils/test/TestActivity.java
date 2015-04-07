@@ -1,11 +1,14 @@
 package com.victor_fun.android_app_utils.test;
 
+import java.net.UnknownHostException;
+
 import android.app.Activity;
 import android.os.Bundle;
 
 import com.victor_fun.android_app_utils.R;
 import com.victor_fun.android_app_utils.fundation_technoligy.multi_thread.countdown.CountDownLatchDemon;
 import com.victor_fun.android_app_utils.fundation_technoligy.multi_thread.cyclicbarrier.HorseRace;
+import com.victor_fun.android_app_utils.fundation_technoligy.net.InternetAddressDemon;
 
 public class TestActivity extends Activity {
 
@@ -15,10 +18,20 @@ public class TestActivity extends Activity {
 		
 		setContentView(R.layout.only_text_view);
 		
-		test();
+//		testLock();
+		testInternetAddress();
 	}
 
-	private void test() {
+	private void testInternetAddress() {
+		InternetAddressDemon demon = new InternetAddressDemon();
+		try {
+			demon.getHostAddressByName("www.sina.com.cn");
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void testLock() {
 		Thread m = new Thread(){
 
 			@Override
