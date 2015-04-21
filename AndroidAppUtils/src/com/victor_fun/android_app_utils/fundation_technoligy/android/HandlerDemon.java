@@ -43,12 +43,13 @@ public class HandlerDemon extends Activity {
 	}
 	
 	private Thread mThread = new Thread(){
-		Looper looper;
+		Handler backgroundHandler = null;
 		
 		@Override
 		public void run() {
-			looper = Looper.
-			
+			Looper.prepare();
+			backgroundHandler = new Handler(Looper.myLooper());
+			Looper.loop();
 		}
 		
 	};
