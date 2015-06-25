@@ -8,8 +8,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.victor_fun.android_app_utils.R;
-import com.victor_fun.android_app_utils.file.SimpleFileObserver.onFileChangedListener;
 import com.victor_fun.android_app_utils.file.service.FileModificationService;
+import com.victor_fun.android_app_utils.file.service.RecursiveFileObserver.onFileChangedListener;
 
 public class FileTestActivity extends Activity implements onFileChangedListener {
 	static final String LOG_TAG = FileTestActivity.class.getSimpleName();

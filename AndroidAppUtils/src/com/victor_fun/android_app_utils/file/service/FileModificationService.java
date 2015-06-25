@@ -2,15 +2,15 @@ package com.victor_fun.android_app_utils.file.service;
 
 import java.io.File;
 
-import com.victor_fun.android_app_utils.file.RecursiveFileObserver;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.Environment;
 import android.os.IBinder;
 import android.widget.Toast;
 
-public class FileModificationService extends Service{
+import com.victor_fun.android_app_utils.file.service.RecursiveFileObserver.onFileChangedListener;
+
+public class FileModificationService extends Service implements onFileChangedListener{
 	private RecursiveFileObserver fileOb;
 	//private static final int MAX_FO = 1;
 	//private List<MyFileObserver> fileOb_list = new ArrayList<MyFileObserver>();
@@ -42,6 +42,7 @@ public class FileModificationService extends Service{
 			//fileOb_list.add(aFileOb);
 		} else {
 			fileOb = new RecursiveFileObserver(f.getAbsolutePath());
+			fileOb.setOnFileChangedListener(this);
 			/*MyFileObserver aFileOb = new MyFileObserver(f.getAbsolutePath());
 			fileOb_list.add(aFileOb);
 			num_of_fos++;
@@ -74,7 +75,16 @@ public class FileModificationService extends Service{
 
 	@Override
 	public IBinder onBind(Intent arg0) {
-		// TODO Auto-generated method stub
 		return null;
+	}
+	
+//	FileMonitorServer fileMonitorServer = new FileMonitorServer(this);
+	@Override
+	public void onFileChanged(int event, String path) {
+		if (path == null) {
+			return;
+		}
+		
+//		fileMonitorServer.onFileChanged(event, path);
 	}
 }

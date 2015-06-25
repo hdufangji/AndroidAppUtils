@@ -1,4 +1,4 @@
-package com.victor_fun.android_app_utils.file;
+package com.victor_fun.android_app_utils.utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,38 +6,26 @@ import java.util.List;
 import java.util.Stack;
 
 import android.os.FileObserver;
-import android.util.Log;
 
-/**
- * RecursiveFileObserver is used to monitor folder/file changes.
- * @author VFang
- *
- */
-public class RecursiveFileObserver {
-	static final String LOG_TAG = RecursiveFileObserver.class.getSimpleName();
+public class RecursiveFileObserver extends FileObserver {
 
-    public static int CHANGES_ONLY = FileObserver.CLOSE_WRITE | FileObserver.MOVE_SELF | FileObserver.MOVED_FROM | 
-    									FileObserver.MODIFY | FileObserver.CREATE | FileObserver.DELETE;
+    public static int CHANGES_ONLY = CLOSE_WRITE | MOVE_SELF | MOVED_FROM;
     
     List<SingleFileObserver> mObservers;
     String mPath;
     int mMask;
     
-    onFileChangedListener mListener;
-    
-    public void setOnFileChangedListener(onFileChangedListener mListener) {
-		this.mListener = mListener;
-	}
-
-	public RecursiveFileObserver(String path) {
-        this(path, CHANGES_ONLY);
+    public RecursiveFileObserver(String path) {
+        this(path, ALL_EVENTS);
     }
     
     public RecursiveFileObserver(String path, int mask) {
+        super(path, mask);
         mPath = path;
         mMask = mask;
     }
 
+    @Override
     public void startWatching() {
         if (mObservers != null) return;
         mObservers = new ArrayList<SingleFileObserver>();
@@ -61,6 +49,7 @@ public class RecursiveFileObserver {
             mObservers.get(i).startWatching();
     }
     
+    @Override
     public void stopWatching() {
         if (mObservers == null) return;
         
@@ -71,11 +60,9 @@ public class RecursiveFileObserver {
         mObservers = null;
     }
     
+    @Override
     public void onEvent(int event, String path) {
-    	Log.d(LOG_TAG, path);
-        if(mListener != null){
-        	mListener.onFileChanged(event, path);        	
-        }
+        
     }
     
     private class SingleFileObserver extends FileObserver {
@@ -92,9 +79,5 @@ public class RecursiveFileObserver {
             RecursiveFileObserver.this.onEvent(event, newPath);
         } 
         
-    }
-    
-    public interface onFileChangedListener{
-    	public void onFileChanged(int event, String path);
     }
 }
