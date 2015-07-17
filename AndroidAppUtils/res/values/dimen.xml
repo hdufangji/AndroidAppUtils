@@ -24,4 +24,10 @@
 	<dimen name="connect_toggle_height">67dp</dimen>
 	
 	<dimen name="dialog_text_size">18dp</dimen>
+	
+	<!-- for refresh layout -->
+	<dimen name="imageSize_normal">20dp</dimen>
+	<dimen name="activity_horizontal_margin_2">20dp</dimen>
+	<dimen name="textSize_normal">18dp</dimen>
+	
 </resources>
