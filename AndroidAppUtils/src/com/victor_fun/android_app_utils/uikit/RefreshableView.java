@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class RefreshableView extends LinearLayout implements OnTouchListener {
+	static final String LOG_TAG = RefreshableView.class.getSimpleName();
 
 	public static final int			STATUS_PULL_TO_REFRESH		= 0;
 
@@ -94,9 +95,22 @@ public class RefreshableView extends LinearLayout implements OnTouchListener {
 		addView(header, 0);
 	}
 
+	StringBuilder sb = new StringBuilder();
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
 		super.onLayout(changed, l, t, r, b);
+		sb.setLength(0);
+		sb.append("changed = ");
+		sb.append(changed);
+		sb.append(", l = ");
+		sb.append(l);
+		sb.append(", t = ");
+		sb.append(t);
+		sb.append(", r = ");
+		sb.append(r);
+		sb.append(", b = ");
+		sb.append(b);
+		Log.i(LOG_TAG, sb.toString());
 		if (changed && !loadOnce) {
 			hideHeaderHeight = -header.getHeight();
 			headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();
@@ -205,6 +219,7 @@ public class RefreshableView extends LinearLayout implements OnTouchListener {
 		View firstChild = listView.getChildAt(0);
 		if (firstChild != null) {
 			int firstVisiblePos = listView.getFirstVisiblePosition();
+			Log.i(LOG_TAG, "listView firstVisiblePos = " + firstVisiblePos + ", firstChild.getTop() = " + firstChild.getTop());
 			if (firstVisiblePos == 0 && firstChild.getTop() == 0) {
 				if (!ableToPull) {
 					yDown = event.getRawY();
