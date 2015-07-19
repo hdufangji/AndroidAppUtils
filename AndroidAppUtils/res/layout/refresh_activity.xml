@@ -9,12 +9,12 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name" />"
 
-	<com.victor_fun.android_app_utils.uikit.RefreshableView 
+	<com.victor_fun.android_app_utils.uikit.MyTestRefreshView
 	    android:id="@+id/refreshView"
 	    android:layout_width="match_parent"
         android:layout_height="match_parent" >
 	    <ListView android:id="@+id/lv"
         	android:layout_width="match_parent"
         	android:layout_height="match_parent" />
-	</com.victor_fun.android_app_utils.uikit.RefreshableView>
+	</com.victor_fun.android_app_utils.uikit.MyTestRefreshView>
 </LinearLayout>

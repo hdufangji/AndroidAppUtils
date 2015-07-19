@@ -91,6 +91,7 @@ public class RefreshableView extends LinearLayout implements OnTouchListener {
 		arrow = (ImageView) header.findViewById(R.id.arrow);
 		description = (TextView) header.findViewById(R.id.description);
 		touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+		Log.i(LOG_TAG, "touchSlop = " + touchSlop);
 		setOrientation(VERTICAL);
 		addView(header, 0);
 	}
@@ -113,6 +114,7 @@ public class RefreshableView extends LinearLayout implements OnTouchListener {
 		Log.i(LOG_TAG, sb.toString());
 		if (changed && !loadOnce) {
 			hideHeaderHeight = -header.getHeight();
+			Log.i(LOG_TAG, "header.getHeight() = " + header.getHeight() + ", hideHeaderHeight = " + hideHeaderHeight);
 			headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();
 			headerLayoutParams.topMargin = hideHeaderHeight;
 			listView = (ListView) getChildAt(1);
@@ -162,10 +164,12 @@ public class RefreshableView extends LinearLayout implements OnTouchListener {
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
 				yDown = event.getRawY();
+				Log.i(LOG_TAG, "first tip y = " + yDown);
 				break;
 			case MotionEvent.ACTION_MOVE:
 				float yMove = event.getRawY();
 				int distance = (int) (yMove - yDown);
+				Log.i(LOG_TAG, "move tip y = " + yMove + ", distance = " + distance);
 				if (distance <= 0 && headerLayoutParams.topMargin <= hideHeaderHeight) {
 					return false;
 				}

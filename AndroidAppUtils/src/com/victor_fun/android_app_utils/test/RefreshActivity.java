@@ -10,12 +10,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.victor_fun.android_app_utils.R;
-import com.victor_fun.android_app_utils.uikit.RefreshableView;
+import com.victor_fun.android_app_utils.uikit.MyTestRefreshView;
+import com.victor_fun.android_app_utils.uikit.MyTestRefreshView.OnRefreshListener;
 import com.victor_fun.android_app_utils.uikit.RefreshableView.PullToRefreshListener;
 
 public class RefreshActivity extends Activity {
 	ListView mLv;
-	RefreshableView refreshView;
+	MyTestRefreshView refreshView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +26,24 @@ public class RefreshActivity extends Activity {
 		mLv = (ListView)findViewById(R.id.lv);
 		mLv.setAdapter(getAdapter());
 	
-		refreshView = (RefreshableView)findViewById(R.id.refreshView);
-		refreshView.setOnRefreshListener(new PullToRefreshListener(){
-
+		refreshView = (MyTestRefreshView)findViewById(R.id.refreshView);
+		refreshView.setOnRefreshListener(new OnRefreshListener() {
+			
 			@Override
 			public void onRefresh() {
 				SystemClock.sleep(1000);
 				refreshView.finishRefreshing();
+				
 			}
-			
-		}, 0);
+		});
+//		refreshView.setOnRefreshListener(new PullToRefreshListener(){
+//
+//			@Override
+//			public void onRefresh() {
+//				
+//			}
+//			
+//		}, 0);
 	}
 	
 	private ListAdapter getAdapter(){
