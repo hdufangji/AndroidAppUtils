@@ -41,10 +41,6 @@
         
         <activity 
             android:name=".test.RefreshActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
          <activity 
@@ -62,9 +58,21 @@
         </activity>
         
          <activity 
+            android:name=".fundation_technoligy.multi_thread.handle_message.ThreadTestActivity" 
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+         <activity 
             android:name=".test.TestActivity" 
             android:theme="@style/AppTheme" >
-            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
         <service android:enabled="true" android:name=".file.service.FileModificationService" />

@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.victor_fun.android_app_utils.R;
 import com.victor_fun.android_app_utils.ThreadUtil;
@@ -46,7 +49,33 @@ public class TestActivity extends Activity {
 //		testInternetAddress();
 //		testLocale();
 //		testMediaMetadataRetreiver();
-		testThreadUtil();
+//		testThreadUtil();
+		testMath();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.test_menu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		switch (id) {
+		case R.id.menu_setting:
+			Toast.makeText(this, R.string.setting, Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.menu_about:
+			Toast.makeText(this, R.string.about, Toast.LENGTH_SHORT).show();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	private void testMath() {
+		Log.i(LOG_TAG, "Math.round(11.5) = " + Math.round(11.5));
+		Log.i(LOG_TAG, "Math.round(-11.5) = " + Math.round(-11.5));
 	}
 
 	private void testThreadUtil() {

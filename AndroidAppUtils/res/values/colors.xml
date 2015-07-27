@@ -13,4 +13,6 @@
   <color name="connect_toggle_on_off">#4A4A4A</color>
   <color name="connect_toggle_on">#00BE00</color>
   <color name="connect_toggle_off">#E50000</color>
+  
+  <color name="blue">#0000FF</color>
 </resources>

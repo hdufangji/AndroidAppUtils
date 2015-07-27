@@ -15,11 +15,11 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Pair;
 
-import com.victor_fun.android_app_utils.DateUtil;
 import com.victor_fun.android_app_utils.media.FileInfo;
 import com.victor_fun.android_app_utils.media.MediaDetailInfo;
 import com.victor_fun.android_app_utils.media.MediaServer;
 import com.victor_fun.android_app_utils.media.MediaType;
+import com.victor_fun.android_app_utils.utils.DateUtil;
 
 public class PhotoServer extends MediaServer {
 	static final String LOG_TAG = PhotoServer.class.getSimpleName();
